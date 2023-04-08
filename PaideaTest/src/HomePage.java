@@ -91,7 +91,7 @@ public class HomePage implements ActionListener{
         }
         
 
-        //IF SIGNUP BUTTON IS PRESSED
+        //IF SIGNUP BUTTON IS PRESSED...
         else if(e.getSource()==sgnpHButton){
             
             //creating objects for signuppage components
@@ -146,7 +146,12 @@ public class HomePage implements ActionListener{
 
         //IF CREATING AN ACCOUNT AND SIGNUP BUTTON IS PRESSED...
         if(e.getSource()==sgnp.Button){
-            
+            //here all the methods belongs to SignupFunctions class's object sgnp
+            //sign up data verification are done in reverse order...
+                //...to report very first invalid entry first
+                //...otherwise it will report very last invalid entry first
+            //reporting methods might require a complete re-design of UI, designing
+
             //if user entered password...
             if(sgnp.checkingPasswordEntry(mainFrame, sgnp)){
                 
@@ -159,11 +164,27 @@ public class HomePage implements ActionListener{
                         //then check if they match...
                         if(sgnp.checkingPasswordMatch(mainFrame, sgnp)){
 
-                            System.out.println("signup successful");
+                            System.out.println("signup successful"); //for debugging
                         }
                     }
                 }
             }
-        }
+            
+            //if user entered a username...
+            if(sgnp.checkingUsernameEntry(mainFrame, sgnp)){
+                System.out.println("good username"); //for debugging
+            }
+
+            //if user entered a valid email...
+            if(sgnp.checkingEmailEntry(mainFrame, sgnp)){
+                System.out.println("good email"); //for debugging
+            }
+
+            //if user entered a valid name...
+            if(sgnp.checkingNameEntry(mainFrame, sgnp)){
+                System.out.println("good name"); //for debugging
+            }
+
+        }//signup data verification ends here
     } //actionPerformed ends here
 }  //homepage class ends here

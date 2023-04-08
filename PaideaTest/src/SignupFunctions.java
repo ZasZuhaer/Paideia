@@ -1,6 +1,6 @@
 //this class contains all signuppage components (methods and attributes)
 
-import java.util.regex.*;
+import java.util.regex.*; //regex patterns are defined in folder: learning files
 import javax.swing.*; 
 //import java.awt.event.*;
 
@@ -21,12 +21,12 @@ public class SignupFunctions {
         String password =  new String(sgnp.PasswordPF.getPassword());
 
         //checking if user didn't enter any password
-        if(password.equals("")){
+        if(password.equals("")){ //empty password
             sgnp.DataVerificationMsg.setText("Please enter your password"); //reporting the user, designing
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return false;
         }
-        else{
+        else{ //valid password
             return true;
         }
     }
@@ -38,12 +38,12 @@ public class SignupFunctions {
         String rtpPassword = new String(sgnp.RtpPasswordPF.getPassword());
 
         //checking if user didn't enter any password
-        if(rtpPassword.equals("")){
+        if(rtpPassword.equals("")){ //empty retype password
             sgnp.DataVerificationMsg.setText("Please retype your password"); //reporting the user, designing
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return false;
         }
-        else{
+        else{ //valid retype password
             return true;
         }
     }
@@ -56,12 +56,12 @@ public class SignupFunctions {
         String rtpPassword = new String(sgnp.RtpPasswordPF.getPassword());
 
         //checking equality
-        if(password.equals(rtpPassword)){
+        if(password.equals(rtpPassword)){ //password matches
             sgnp.DataVerificationMsg.setText(""); //clearing the reports
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return true;
         }
-        else{
+        else{ //password doesn't match
             sgnp.DataVerificationMsg.setText("Passwords do not match"); //reporting the user, designing
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return false;
@@ -96,4 +96,74 @@ public class SignupFunctions {
         }
 
     }
+
+    //checking if user entered a valid name
+    public boolean checkingNameEntry(JFrame mainFrame, SignupFunctions sgnp){
+        
+        //storing the user entered name in a string object
+        String name = new String(sgnp.NameTF.getText());
+
+        //checking for empty name entry
+        if(name.equals("")){ //empty name
+            sgnp.DataVerificationMsg.setText("Please enter your name"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+            return false;
+        }
+
+        //checking for valid name entry
+        if(Pattern.matches("^(?=.*[a-z])[a-zA-Z\\.\s]*$", name)){ //valid name
+            return true;
+        }
+        else{ //invalid name
+            sgnp.DataVerificationMsg.setText("Please enter a valid name"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+            return false;
+        }
+        
+    }
+
+    //checking if user entered a valid email
+    public boolean checkingEmailEntry(JFrame mainFrame, SignupFunctions sgnp){
+        
+        //storing the user entered email in a string object
+        String email = new String(sgnp.EmailTF.getText());
+
+        //checking for empty email entry
+        if(email.equals("")){ //empty email
+            sgnp.DataVerificationMsg.setText("Please enter your email"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+            return false;
+        }
+
+        //checking for valid email entry
+        //this regex requires more accuracy
+        if(Pattern.matches("^(?=.*[a-z])(?=.*[\\.])(?=.*[@])[a-zA-Z0-9\\.@]*$", email)){ //valid email
+            return true;
+        }
+        else{ //invalid email
+            sgnp.DataVerificationMsg.setText("Please enter a valid email"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+            return false;
+        }
+        
+    }
+
+    //checking if user entered a valid username
+    public boolean checkingUsernameEntry(JFrame mainFrame, SignupFunctions sgnp){
+        
+        //storing the user entered username in a string object
+        String username = new String(sgnp.UsernameTF.getText());
+
+        //checking for empty username entry
+        if(username.equals("")){ //empty username
+            sgnp.DataVerificationMsg.setText("Please enter your username"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+            return false;
+        }
+
+        else{ //valid username
+            return true;
+        }
+    }
+
 }

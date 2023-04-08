@@ -29,7 +29,7 @@ public class HomePage implements ActionListener{
 
     public HomePage(){
         //creating homepage components objects
-        mainFrame = new JFrame("Paidea | Login or Signup");   
+        mainFrame = new JFrame("Paideia | Login or Signup");   
         lgnHButton = new JButton("Login");
         sgnpHButton = new JButton("Signup");
         goBack = new JButton("Go Back"); //preconfiguring go back

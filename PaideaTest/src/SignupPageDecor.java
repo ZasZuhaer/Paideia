@@ -20,8 +20,8 @@ public class SignupPageDecor {
         sgnp.UsernameTF.setBounds           (500, 260, 150, 25);
         sgnp.PasswordPF.setBounds           (500, 310, 150, 25); 
         sgnp.RtpPasswordPF.setBounds        (500, 360, 150, 25);
-        sgnp.DataVerificationMsg.setBounds  (400, 400, 200, 25);
-        sgnp.Button.setBounds               (420, 450, 150, 25);
+        sgnp.DataVerificationMsg.setBounds  (200, 400, 600, 25);
+        sgnp.Button.setBounds               (420, 500, 150, 25);
 
         sgnp.Title.setFont(new Font("Times New Roman", Font.PLAIN, 65));
 

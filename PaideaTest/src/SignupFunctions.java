@@ -1,26 +1,45 @@
+//this class contains all signuppage components (methods and attributes)
+
+import java.util.regex.*;
 import javax.swing.*; 
 //import java.awt.event.*;
 
 public class SignupFunctions {
     //signuppage components
     JLabel Title;
-    JLabel Name, Email, Username, Password, RtpPassword, DataVerificationMsg, PasswordStrengthMsg1, PasswordStrengthMsg2, PasswordStrengthMsg3;
+    JLabel Name, Email, Username, Password, RtpPassword, DataVerificationMsg;
     JTextField NameTF, EmailTF, UsernameTF;
     JPasswordField PasswordPF, RtpPasswordPF;
     JButton Button;
 
     public SignupFunctions(){}
 
-    //checking if user entered password in both password field and retype password field
+    //checking if user entered password in password field
     public boolean checkingPasswordEntry(JFrame mainFrame, SignupFunctions sgnp){
        
-        //storing the user typed passwords to a string object
+        //storing the user typed password to a string object
         String password =  new String(sgnp.PasswordPF.getPassword());
+
+        //checking if user didn't enter any password
+        if(password.equals("")){
+            sgnp.DataVerificationMsg.setText("Please enter your password"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    //checking if the user entered password in retype password field
+    public boolean checkingRtpPasswordEntry(JFrame mainFrame, SignupFunctions sgnp){
+       
+        //storing the user typed password to a string object
         String rtpPassword = new String(sgnp.RtpPasswordPF.getPassword());
 
         //checking if user didn't enter any password
-        if(password.equals("") || rtpPassword.equals("")){
-            sgnp.DataVerificationMsg.setText("Please enter your password"); //reporting the user, designing
+        if(rtpPassword.equals("")){
+            sgnp.DataVerificationMsg.setText("Please retype your password"); //reporting the user, designing
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return false;
         }
@@ -57,24 +76,22 @@ public class SignupFunctions {
 
         //*****checking strength*****//
         //condition 1: minimum 8 characters
-        boolean minEightChars = false;
+        boolean minEightChars = (password.length() >= 8);
         //condition 2: must contain a number
-        boolean containsNumber = false;
+        boolean containsNumber = Pattern.matches(".*\\d.*", password);
         //condition 3: must contain a uppercase character
-        boolean containsUppercase = false;
+        boolean containsUppercase = Pattern.matches(".*[A-Z].*", password);
         //condition 4: must contain a lowercase character
-        boolean containsLowercase = false;
+        boolean containsLowercase = Pattern.matches(".*[a-z].*", password);
 
-        //checking condition 1
-        if(password.length() >= 8){
-            minEightChars = true;
-        }
-        
-        //checking strength
+
+        //checking all conditions together
         if(minEightChars && containsNumber && containsUppercase && containsLowercase){
             return true;
         }
         else{
+            sgnp.DataVerificationMsg.setText("Passwords must contain at least an uppercase character, a lowercase character and a digit"); //reporting the user, designing
+            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return false;
         }
 

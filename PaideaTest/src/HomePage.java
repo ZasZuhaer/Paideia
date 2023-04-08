@@ -102,7 +102,7 @@ public class HomePage implements ActionListener{
             sgnp.Username = new JLabel("Username: ");
             sgnp.Password = new JLabel("Password: ");
             sgnp.RtpPassword = new JLabel("Retype Password: ");
-            sgnp.DataVerificationMsg = new JLabel();
+            sgnp.DataVerificationMsg = new JLabel("", SwingConstants.CENTER);
                 //textfields
             sgnp.NameTF = new JTextField();
             sgnp.EmailTF = new JTextField();
@@ -147,11 +147,22 @@ public class HomePage implements ActionListener{
         //IF CREATING AN ACCOUNT AND SIGNUP BUTTON IS PRESSED...
         if(e.getSource()==sgnp.Button){
             
-            //if user entered both passwords...
+            //if user entered password...
             if(sgnp.checkingPasswordEntry(mainFrame, sgnp)){
-            
-                //then check if they match
-                sgnp.checkingPasswordMatch(mainFrame, sgnp);
+                
+                //if password strength is strong...
+                if(sgnp.checkingPasswordStrength(mainFrame, sgnp)){
+
+                    //if user retyped the password...
+                    if(sgnp.checkingRtpPasswordEntry(mainFrame, sgnp)){
+
+                        //then check if they match...
+                        if(sgnp.checkingPasswordMatch(mainFrame, sgnp)){
+
+                            System.out.println("signup successful");
+                        }
+                    }
+                }
             }
         }
     } //actionPerformed ends here

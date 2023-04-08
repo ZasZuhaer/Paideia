@@ -1,3 +1,5 @@
+//this class contains all loginpage components (methods and attributes)
+
 import javax.swing.*; 
 //import java.awt.event.*;
 

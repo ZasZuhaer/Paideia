@@ -164,7 +164,7 @@ public class HomePage implements ActionListener{
                         //then check if they match...
                         if(sgnp.checkingPasswordMatch(mainFrame, sgnp)){
 
-                            System.out.println("signup successful"); //for debugging
+                            System.out.println("good password"); //for debugging
                         }
                     }
                 }

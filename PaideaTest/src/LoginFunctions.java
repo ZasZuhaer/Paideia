@@ -3,7 +3,7 @@
 import javax.swing.*; 
 //import java.awt.event.*;
 
-public class LoginFunctions {
+public class LoginFunctions implements ILoginFunctions{
     //loginpage components
     JLabel Title;
     JLabel Username, Email, Password;

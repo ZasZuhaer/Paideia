@@ -4,7 +4,7 @@ import java.util.regex.*; //regex patterns are defined in folder: learning files
 import javax.swing.*; 
 //import java.awt.event.*;
 
-public class SignupFunctions {
+public class SignupFunctions implements ISignupFunctions{
     //signuppage components
     JLabel Title;
     JLabel Name, Email, Username, Password, RtpPassword, DataVerificationMsg;

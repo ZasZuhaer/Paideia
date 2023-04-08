@@ -16,3 +16,15 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+features added and to be added:
+    added:
+        1. strong password creation using regex
+        2. invalid name entry
+        3. 
+    to be added:
+        1. show password button
+        2. SignupFunctions.checkingEmailEntry() regex accuracy
+        3. database for username and email duplication validation
+
+        

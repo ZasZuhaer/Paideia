@@ -12,7 +12,25 @@ public class SignupFunctions implements ISignupFunctions{
     JPasswordField PasswordPF, RtpPasswordPF;
     JButton Button;
 
-    public SignupFunctions(){}
+    public SignupFunctions(){
+        //creating objects for signuppage components
+            //labels
+        Title = new JLabel("Sign Up");
+        Name = new JLabel("Name: ");
+        Email = new JLabel("Email: ");
+        Username = new JLabel("Username: ");
+        Password = new JLabel("Password: ");
+        RtpPassword = new JLabel("Retype Password: ");
+        DataVerificationMsg = new JLabel("", SwingConstants.CENTER);
+            //textfields
+        NameTF = new JTextField();
+        EmailTF = new JTextField();
+        UsernameTF = new JTextField();
+        PasswordPF = new JPasswordField();
+        RtpPasswordPF = new JPasswordField();
+            //buttons
+        Button = new JButton("Sign Up");
+    }
 
     //checking if user entered password in password field
     public boolean checkingPasswordEntry(JFrame mainFrame, SignupFunctions sgnp){
@@ -90,7 +108,7 @@ public class SignupFunctions implements ISignupFunctions{
             return true;
         }
         else{
-            sgnp.DataVerificationMsg.setText("Passwords must contain at least an uppercase character, a lowercase character and a digit"); //reporting the user, designing
+            sgnp.DataVerificationMsg.setText("Passwords must be 8 digit long and contain at least an uppercase character, a lowercase character and a digit"); //reporting the user, designing
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
             return false;
         }

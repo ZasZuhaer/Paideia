@@ -13,7 +13,23 @@ public class LoginFunctions implements ILoginFunctions{
     JButton WithEmailB, WithUsernameB;
     JButton Button;
 
-    public LoginFunctions(){}
+    public LoginFunctions(){
+        //creating objects for loginpage components
+            //labels
+        Title = new JLabel("Login");
+        Username = new JLabel("Username: ");
+        Email = new JLabel("Email: ");
+        Password = new JLabel("Password: ");
+            //textfields
+        UsernameTF = new JTextField();
+        EmailTF = new JTextField();
+        PasswordPF = new JPasswordField();
+            //buttons
+        ForgotPasswordB = new JButton("Forgot Password?");
+        WithEmailB = new JButton("Login with email");
+        WithUsernameB = new JButton("Login with Username");
+        Button = new JButton("Login");
+    }
 
     public void loginWithEmail(JFrame mainFrame, LoginFunctions lgn){
         //designing

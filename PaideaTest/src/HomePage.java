@@ -16,7 +16,7 @@ import java.awt.event.*;
 
 public class HomePage implements ActionListener{
 
-    //creating object for loginpage and signuppage components
+    //creating object for loginpage and signuppage
     LoginFunctions lgn = new LoginFunctions();
     SignupFunctions sgnp = new SignupFunctions();
 
@@ -64,22 +64,6 @@ public class HomePage implements ActionListener{
         //IF LOGIN BUTTON IS PRESSED...
         if(e.getSource()==lgnHButton){
 
-            //creating objects for loginpage components
-                //labels
-            lgn.Title = new JLabel("Login");
-            lgn.Username = new JLabel("Username: ");
-            lgn.Email = new JLabel("Email: ");
-            lgn.Password = new JLabel("Password: ");
-                //textfields
-            lgn.UsernameTF = new JTextField();
-            lgn.EmailTF = new JTextField();
-            lgn.PasswordPF = new JPasswordField();
-                //buttons
-            lgn.ForgotPasswordB = new JButton("Forgot Password?");
-            lgn.WithEmailB = new JButton("Login with email");
-            lgn.WithUsernameB = new JButton("Login with Username");
-            lgn.Button = new JButton("Login");
-
             //designing loginpage components
             new LoginPageDecor(mainFrame, lgnHButton, sgnpHButton, goBack, lgn);
         
@@ -93,24 +77,6 @@ public class HomePage implements ActionListener{
 
         //IF SIGNUP BUTTON IS PRESSED...
         else if(e.getSource()==sgnpHButton){
-            
-            //creating objects for signuppage components
-                //labels
-            sgnp.Title = new JLabel("Sign Up");
-            sgnp.Name = new JLabel("Name: ");
-            sgnp.Email = new JLabel("Email: ");
-            sgnp.Username = new JLabel("Username: ");
-            sgnp.Password = new JLabel("Password: ");
-            sgnp.RtpPassword = new JLabel("Retype Password: ");
-            sgnp.DataVerificationMsg = new JLabel("", SwingConstants.CENTER);
-                //textfields
-            sgnp.NameTF = new JTextField();
-            sgnp.EmailTF = new JTextField();
-            sgnp.UsernameTF = new JTextField();
-            sgnp.PasswordPF = new JPasswordField();
-            sgnp.RtpPasswordPF = new JPasswordField();
-                //buttons
-            sgnp.Button = new JButton("Sign Up");
 
             //designing signuppage components
             new SignupPageDecor(mainFrame, lgnHButton, sgnpHButton, goBack, sgnp);

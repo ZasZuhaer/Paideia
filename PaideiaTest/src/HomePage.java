@@ -16,9 +16,9 @@ import java.awt.event.*;
 
 public class HomePage implements ActionListener{
 
-    //creating object for loginpage and signuppage
-    LoginFunctions lgn = new LoginFunctions();
-    SignupFunctions sgnp = new SignupFunctions();
+    //creating object references for loginpage and signuppage
+    LoginFunctions lgn;
+    SignupFunctions sgnp;
 
     //homepage components
     JFrame mainFrame;  //mainFrame refers to homepage
@@ -34,7 +34,10 @@ public class HomePage implements ActionListener{
         sgnpHButton = new JButton("Signup");
         goBack = new JButton("Go Back"); //preconfiguring go back
 
-        
+        //creating objects for loginpage and signuppage
+        lgn = new LoginFunctions();
+        sgnp = new SignupFunctions();
+
         //designing homepage components
         lgnHButton.setBounds(150,250,200,50);
         sgnpHButton.setBounds(650,250,200,50);

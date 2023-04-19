@@ -34,6 +34,7 @@ public class HomePage implements ActionListener{
         sgnpHButton = new JButton("Signup");
         goBack = new JButton("Go Back"); //preconfiguring go back
 
+        
         //creating objects for loginpage and signuppage
         lgn = new LoginFunctions();
         sgnp = new SignupFunctions();

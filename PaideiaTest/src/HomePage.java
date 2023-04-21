@@ -159,20 +159,20 @@ public class HomePage implements ActionListener{
                                         String email = new String(sgnp.EmailTF.getText());
                                         String username = new String(sgnp.UsernameTF.getText());
                                         String password = new String(sgnp.PasswordPF.getPassword());
-                                        int error = accounts_tb.adduser(name, email, username, password);
+                                        int errors = accounts_tb.adduser(name, email, username, password);
 
                                         //Reporting signup results
-                                        if(error==0){
+                                        if(errors==0){
                                             //successful signup
                                             sgnp.DataVerificationMsg.setText("Signup successful");
                                             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
                                         }
-                                        else if(error==1){
+                                        else if(errors==1){
                                             //username already in database
                                             sgnp.DataVerificationMsg.setText("Username already exists");
                                             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
                                         }
-                                        else if(error==2){
+                                        else if(errors==2){
                                             //email already in database
                                             sgnp.DataVerificationMsg.setText("Email already exists");
                                             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe

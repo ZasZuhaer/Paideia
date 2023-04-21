@@ -27,6 +27,9 @@ public class HomePage implements ActionListener{
     //go back button
     JButton goBack;
 
+    //connecting database
+    PaideiaDB accounts_tb = new PaideiaDB("accounts");
+
     public HomePage(){
         //creating homepage components objects
         mainFrame = new JFrame("Paideia | Login or Signup");   
@@ -34,7 +37,6 @@ public class HomePage implements ActionListener{
         sgnpHButton = new JButton("Signup");
         goBack = new JButton("Go Back"); //preconfiguring go back
 
-        
         //creating objects for loginpage and signuppage
         lgn = new LoginFunctions();
         sgnp = new SignupFunctions();
@@ -57,7 +59,15 @@ public class HomePage implements ActionListener{
         mainFrame.setSize(1000, 600);  
 		mainFrame.setLayout(null);
         mainFrame.setLocationRelativeTo(null);  
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        //mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        //performing manual close operation on mainFrame
+        mainFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                accounts_tb.close(); //closing database connection
+                System.exit(0); //closing mainFrame
+            }
+        });
         mainFrame.setVisible(true);  
     }  
 
@@ -135,6 +145,34 @@ public class HomePage implements ActionListener{
                         if(sgnp.checkingPasswordMatch(mainFrame, sgnp)){
 
                             System.out.println("good password"); //for debugging
+                            //adding user in database
+                            String name = new String(sgnp.NameTF.getText());
+                            String email = new String(sgnp.EmailTF.getText());
+                            String username = new String(sgnp.UsernameTF.getText());
+                            String password = new String(sgnp.PasswordPF.getPassword());
+                            int error = accounts_tb.adduser(name, email, username, password);
+
+                            //Reporting signup results
+                            if(error==0){
+                                //successful signup
+                                sgnp.DataVerificationMsg.setText("Signup successful");
+                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                            }
+                            else if(error==1){
+                                //username already in database
+                                sgnp.DataVerificationMsg.setText("Username already exists");
+                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                            }
+                            else if(error==2){
+                                //email already in database
+                                sgnp.DataVerificationMsg.setText("Email already exists");
+                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                            }
+                            else{
+                                //unknown error during adding user in database
+                                sgnp.DataVerificationMsg.setText("Unknown error occured during adding user in database");
+                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                            }
                         }
                     }
                 }
@@ -157,4 +195,5 @@ public class HomePage implements ActionListener{
 
         }//signup data verification ends here
     } //actionPerformed ends here
+    
 }  //homepage class ends here

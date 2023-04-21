@@ -127,72 +127,68 @@ public class HomePage implements ActionListener{
         //IF CREATING AN ACCOUNT AND SIGNUP BUTTON IS PRESSED...
         if(e.getSource()==sgnp.Button){
             //here all the methods belongs to SignupFunctions class's object sgnp
-            //sign up data verification are done in reverse order...
-                //...to report very first invalid entry first
-                //...otherwise it will report very last invalid entry first
             //reporting methods might require a complete re-design of UI, designing
 
-            //if user entered password...
-            if(sgnp.checkingPasswordEntry(mainFrame, sgnp)){
+            //if user entered a valid name...
+            if(sgnp.checkingNameEntry(mainFrame, sgnp)){
+                System.out.println("good name"); //for debugging
+            
+                //if user entered a valid email...
+                if(sgnp.checkingEmailEntry(mainFrame, sgnp)){
+                    System.out.println("good email"); //for debugging
                 
-                //if password strength is strong...
-                if(sgnp.checkingPasswordStrength(mainFrame, sgnp)){
+                    //if user entered a username...
+                    if(sgnp.checkingUsernameEntry(mainFrame, sgnp)){
+                        System.out.println("good username"); //for debugging
+                    
+                        //if user entered password...
+                        if(sgnp.checkingPasswordEntry(mainFrame, sgnp)){
+                            
+                            //if password strength is strong...
+                            if(sgnp.checkingPasswordStrength(mainFrame, sgnp)){
 
-                    //if user retyped the password...
-                    if(sgnp.checkingRtpPasswordEntry(mainFrame, sgnp)){
+                                //if user retyped the password...
+                                if(sgnp.checkingRtpPasswordEntry(mainFrame, sgnp)){
 
-                        //then check if they match...
-                        if(sgnp.checkingPasswordMatch(mainFrame, sgnp)){
+                                    //then check if they match...
+                                    if(sgnp.checkingPasswordMatch(mainFrame, sgnp)){
 
-                            System.out.println("good password"); //for debugging
-                            //adding user in database
-                            String name = new String(sgnp.NameTF.getText());
-                            String email = new String(sgnp.EmailTF.getText());
-                            String username = new String(sgnp.UsernameTF.getText());
-                            String password = new String(sgnp.PasswordPF.getPassword());
-                            int error = accounts_tb.adduser(name, email, username, password);
+                                        System.out.println("good password"); //for debugging
+                                        //adding user in database
+                                        String name = new String(sgnp.NameTF.getText());
+                                        String email = new String(sgnp.EmailTF.getText());
+                                        String username = new String(sgnp.UsernameTF.getText());
+                                        String password = new String(sgnp.PasswordPF.getPassword());
+                                        int error = accounts_tb.adduser(name, email, username, password);
 
-                            //Reporting signup results
-                            if(error==0){
-                                //successful signup
-                                sgnp.DataVerificationMsg.setText("Signup successful");
-                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
-                            }
-                            else if(error==1){
-                                //username already in database
-                                sgnp.DataVerificationMsg.setText("Username already exists");
-                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
-                            }
-                            else if(error==2){
-                                //email already in database
-                                sgnp.DataVerificationMsg.setText("Email already exists");
-                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
-                            }
-                            else{
-                                //unknown error during adding user in database
-                                sgnp.DataVerificationMsg.setText("Unknown error occured during adding user in database");
-                                SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                                        //Reporting signup results
+                                        if(error==0){
+                                            //successful signup
+                                            sgnp.DataVerificationMsg.setText("Signup successful");
+                                            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                                        }
+                                        else if(error==1){
+                                            //username already in database
+                                            sgnp.DataVerificationMsg.setText("Username already exists");
+                                            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                                        }
+                                        else if(error==2){
+                                            //email already in database
+                                            sgnp.DataVerificationMsg.setText("Email already exists");
+                                            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                                        }
+                                        else{
+                                            //unknown error during adding user in database
+                                            sgnp.DataVerificationMsg.setText("Unknown error occured during adding user in database");
+                                            SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-            
-            //if user entered a username...
-            if(sgnp.checkingUsernameEntry(mainFrame, sgnp)){
-                System.out.println("good username"); //for debugging
-            }
-
-            //if user entered a valid email...
-            if(sgnp.checkingEmailEntry(mainFrame, sgnp)){
-                System.out.println("good email"); //for debugging
-            }
-
-            //if user entered a valid name...
-            if(sgnp.checkingNameEntry(mainFrame, sgnp)){
-                System.out.println("good name"); //for debugging
-            }
-
         }//signup data verification ends here
     } //actionPerformed ends here
     

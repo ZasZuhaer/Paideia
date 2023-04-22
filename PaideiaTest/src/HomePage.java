@@ -191,5 +191,4 @@ public class HomePage implements ActionListener{
             }
         }//signup data verification ends here
     } //actionPerformed ends here
-    
 }  //homepage class ends here

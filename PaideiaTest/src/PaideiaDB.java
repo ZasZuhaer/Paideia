@@ -2,7 +2,7 @@
 import java.sql.*;  
 
 public class PaideiaDB implements IPaideiaDB{  
-    //creating object reference
+    //creating object reference...
     Connection con; //for connecting to database
     Statement stmt; //for executing commands(all commands will be executed using stmt object)
     ResultSet rs; //for storing selected data from database to local memory

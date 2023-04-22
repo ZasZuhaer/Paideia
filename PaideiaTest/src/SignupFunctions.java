@@ -129,7 +129,7 @@ public class SignupFunctions implements ISignupFunctions{
         }
 
         //checking for valid name entry
-        if(Pattern.matches("^(?=.*[a-z])[a-zA-Z\\.\s]*$", name)){ //valid name
+        if(Pattern.matches("^(?=.*[a-zA-Z])[a-zA-Z\\.\s]*$", name)){ //valid name
             return true;
         }
         else{ //invalid name

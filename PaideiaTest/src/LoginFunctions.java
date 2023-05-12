@@ -5,18 +5,16 @@ import javax.swing.*;
 
 public class LoginFunctions implements ILoginFunctions{
     //loginpage components
-    JLabel Title;
     JLabel Username, Email, Password;
     JTextField UsernameTF, EmailTF;
     JPasswordField PasswordPF;
     JButton ForgotPasswordB;
     JButton WithEmailB, WithUsernameB;
-    JButton Button;
+    JButton Button, sgnpButton;
 
     public LoginFunctions(){
         //creating objects for loginpage components
             //labels
-        Title = new JLabel("Login");
         Username = new JLabel("Username: ");
         Email = new JLabel("Email: ");
         Password = new JLabel("Password: ");
@@ -29,6 +27,7 @@ public class LoginFunctions implements ILoginFunctions{
         WithEmailB = new JButton("Login with email");
         WithUsernameB = new JButton("Login with Username");
         Button = new JButton("Login");
+        sgnpButton = new JButton("Don't have an account?");
     }
 
     public void loginWithEmail(JFrame mainFrame, LoginFunctions lgn){

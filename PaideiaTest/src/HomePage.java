@@ -1,6 +1,10 @@
 //import java.awt.*;
 import javax.swing.*; 
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+//import java.io.File;
+import javax.imageio.ImageIO;
+
 
 /* 
  * keywords to search for homepage items:           "homepage components"
@@ -22,7 +26,8 @@ public class HomePage implements ActionListener{
 
     //homepage components
     JFrame mainFrame;  //mainFrame refers to homepage
-    JButton lgnHButton, sgnpHButton; //already have an account? or create an account?
+    JButton LearnerButton, TeacherButton; //already have an account? or create an account?
+    BufferedImage homeImage; //homepage background image
     
     //go back button
     JButton goBack;
@@ -30,11 +35,14 @@ public class HomePage implements ActionListener{
     //connecting database
     PaideiaDB accounts_tb = new PaideiaDB("accounts");
 
+    //functional objects
+    String userType;
+
     public HomePage(){
         //creating homepage components objects
         mainFrame = new JFrame("Paideia | Login or Signup");   
-        lgnHButton = new JButton("Login");
-        sgnpHButton = new JButton("Signup");
+        LearnerButton = new JButton("I'm a Learner");
+        TeacherButton = new JButton("I'm a Teacher");
         goBack = new JButton("Go Back"); //preconfiguring go back
 
         //creating objects for loginpage and signuppage
@@ -42,18 +50,27 @@ public class HomePage implements ActionListener{
         sgnp = new SignupFunctions();
 
         //designing homepage components
-        lgnHButton.setBounds(150,250,200,50);
-        sgnpHButton.setBounds(650,250,200,50);
+        LearnerButton.setBounds(575,315,290,50);
+        TeacherButton.setBounds(575,370,290,50);
         goBack.setBounds(10,10,100,25); //preconfiguring go back
 
         //adding actions to homepage components
-        lgnHButton.addActionListener(this);
-        sgnpHButton.addActionListener(this);
+        LearnerButton.addActionListener(this);
+        TeacherButton.addActionListener(this);
         goBack.addActionListener(this); //preconfiguring go back
 
+        //adding background image on mainframe
+        try{
+            homeImage = ImageIO.read(getClass().getResource("Homepage.PNG"));
+            mainFrame.setContentPane(new ImagePanel(homeImage));
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
         //adding homepage components in mainFrame
-        mainFrame.add(lgnHButton);
-        mainFrame.add(sgnpHButton);
+        mainFrame.add(LearnerButton);
+        mainFrame.add(TeacherButton);
 
         //homepage default configurations
         mainFrame.setSize(1000, 600);  
@@ -72,28 +89,27 @@ public class HomePage implements ActionListener{
     }  
 
     public void actionPerformed(ActionEvent e){
-        //adding go back button in both loginpage and signuppage
-        mainFrame.add(goBack);
 
         //IF LOGIN BUTTON IS PRESSED...
-        if(e.getSource()==lgnHButton){
+        if((e.getSource()==LearnerButton) ||(e.getSource()==TeacherButton)){
 
             //designing loginpage components
-            new LoginPageDecor(mainFrame, lgnHButton, sgnpHButton, goBack, lgn);
+            new LoginPageDecor(mainFrame, goBack, lgn);
         
             //adding actions to loginpage components
             lgn.WithEmailB.addActionListener(this);
             lgn.WithUsernameB.addActionListener(this);
             lgn.ForgotPasswordB.addActionListener(this);
             lgn.Button.addActionListener(this);
+            lgn.sgnpButton.addActionListener(this);
         }
         
 
         //IF SIGNUP BUTTON IS PRESSED...
-        else if(e.getSource()==sgnpHButton){
+        else if(e.getSource()==lgn.sgnpButton){
 
             //designing signuppage components
-            new SignupPageDecor(mainFrame, lgnHButton, sgnpHButton, goBack, sgnp);
+            new SignupPageDecor(mainFrame, goBack, sgnp);
 
             //adding actions to signuppage components
             sgnp.Button.addActionListener(this);
@@ -117,8 +133,15 @@ public class HomePage implements ActionListener{
         //IF GO BACK IS PRESSED...
         if(e.getSource()==goBack){
             mainFrame.getContentPane().removeAll(); //removing all mainframe components
-            mainFrame.add(lgnHButton); //adding homepage component, login
-            mainFrame.add(sgnpHButton); //adding homepage component, signup
+            //adding background image on mainframe
+            try{
+                mainFrame.setContentPane(new ImagePanel(homeImage));
+            }
+            catch(Exception excp){
+                System.out.println(excp);
+            }
+            mainFrame.add(LearnerButton); //adding homepage component, login
+            mainFrame.add(TeacherButton); //adding homepage component, signup
             SwingUtilities.updateComponentTreeUI(mainFrame); //refreshing mainframe
         }
 

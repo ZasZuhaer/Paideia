@@ -6,7 +6,6 @@ import javax.swing.*;
 
 public class SignupFunctions implements ISignupFunctions{
     //signuppage components
-    JLabel Title;
     JLabel Name, Email, Username, Password, RtpPassword, DataVerificationMsg;
     JTextField NameTF, EmailTF, UsernameTF;
     JPasswordField PasswordPF, RtpPasswordPF;
@@ -15,7 +14,6 @@ public class SignupFunctions implements ISignupFunctions{
     public SignupFunctions(){
         //creating objects for signuppage components
             //labels
-        Title = new JLabel("Sign Up");
         Name = new JLabel("Name: ");
         Email = new JLabel("Email: ");
         Username = new JLabel("Username: ");

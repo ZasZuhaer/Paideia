@@ -61,7 +61,7 @@ public class HomePage implements ActionListener{
 
         //adding background image on mainframe
         try{
-            homeImage = ImageIO.read(getClass().getResource("Homepage.PNG"));
+            homeImage = ImageIO.read(getClass().getResource("Images/Homepage.PNG"));
             mainFrame.setContentPane(new ImagePanel(homeImage));
         }
         catch(Exception e){

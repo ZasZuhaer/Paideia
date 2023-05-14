@@ -11,7 +11,7 @@ public class SignupPageDecor {
         
         //adding background image on signuppage
         try{
-            BufferedImage sgnpImage = ImageIO.read(getClass().getResource("Signuppage.PNG"));
+            BufferedImage sgnpImage = ImageIO.read(getClass().getResource("Images/Signuppage.PNG"));
             mainFrame.setContentPane(new ImagePanel(sgnpImage));
         }
         catch(Exception e){

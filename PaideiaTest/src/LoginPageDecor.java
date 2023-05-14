@@ -14,7 +14,7 @@ public class LoginPageDecor{
         
         //adding background image on loginpage
         try{
-            BufferedImage lgnImage = ImageIO.read(getClass().getResource("Loginpage.PNG"));
+            BufferedImage lgnImage = ImageIO.read(getClass().getResource("Images/Loginpage.PNG"));
             mainFrame.setContentPane(new ImagePanel(lgnImage));
         }
         catch(Exception e){
@@ -22,18 +22,17 @@ public class LoginPageDecor{
         }
 
         //arranging loginpage components
-        lgn.Username.setBounds       (340, 200, 100, 50);
+        lgn.Username.setBounds       (350, 200, 100, 50);
         lgn.Email.setBounds          (340, 200, 100, 50);
         lgn.Password.setBounds       (340, 300, 100, 50);
         lgn.UsernameTF.setBounds     (440, 200, 150, 50);
         lgn.EmailTF.setBounds        (440, 200, 150, 50);
-        lgn.PasswordPF.setBounds     (440, 300, 150, 50);        
+        lgn.PasswordPF.setBounds     (440, 300, 150, 50);       
         lgn.ForgotPasswordB.setBounds (370, 400, 200, 25);
         lgn.WithEmailB.setBounds      (370, 450, 200, 25);
         lgn.WithUsernameB.setBounds   (370, 450, 200, 25);
         lgn.Button.setBounds         (370, 500, 200, 25);
         lgn.sgnpButton.setBounds     (10, 100, 200, 25);
-        
         
         lgn.Username.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lgn.Email.setFont(new Font("Times New Roman", Font.PLAIN, 20));

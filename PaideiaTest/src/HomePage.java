@@ -81,6 +81,7 @@ public class HomePage implements ActionListener {
         mainFrame.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent e) {
                 accounts_tb.close(); // closing database connection
+                System.out.println("Database server closed from HomaPage.java");
                 System.exit(0); // closing mainFrame
             }
         });

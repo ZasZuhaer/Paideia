@@ -14,7 +14,7 @@ public class LoginPageDecor {
 
         // adding background image on loginpage
         try {
-            BufferedImage lgnImage = ImageIO.read(getClass().getResource("Loginpage.PNG"));
+            BufferedImage lgnImage = ImageIO.read(getClass().getResource("Images/Loginpage.PNG"));
             mainFrame.setContentPane(new ImagePanel(lgnImage));
         } catch (Exception e) {
             System.out.println(e);

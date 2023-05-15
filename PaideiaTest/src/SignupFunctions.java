@@ -12,7 +12,7 @@ public class SignupFunctions implements ISignupFunctions{
     JButton Button;
     JRadioButton ImTeacher;
     JRadioButton ImStudent;
-    
+    ButtonGroup bg = new ButtonGroup();
 
     public SignupFunctions(){
         //creating objects for signuppage components
@@ -33,6 +33,8 @@ public class SignupFunctions implements ISignupFunctions{
         Button = new JButton("Sign Up");
         ImTeacher = new JRadioButton("I'm a Teacher!");
         ImStudent = new JRadioButton("I'm a Student!");
+        bg.add(ImStudent);
+        bg.add(ImTeacher); 
     }
 
     //checking if user entered password in password field

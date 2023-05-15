@@ -31,15 +31,18 @@ public class SignupPageDecor {
         sgnp.UsernameTF.setBounds(618, 290, 245, 30);
         sgnp.PasswordPF.setBounds(618, 325, 245, 30);
         sgnp.RtpPasswordPF.setBounds(618, 360, 245, 30);
-        sgnp.DataVerificationMsg.setBounds(200, 400, 800, 25);
+        sgnp.DataVerificationMsg.setBounds(669, 427, 150, 25);
         sgnp.Button.setBounds(649, 460, 190, 38);
-        sgnp.ImTeacher.setBounds(649, 400, 190, 20);
-        sgnp.ImStudent.setBounds(649, 430, 190, 20);
+        sgnp.ImTeacher.setBounds(614, 400, 90, 20);
+        sgnp.ImStudent.setBounds(793, 400, 90, 20);
 
         // Font Change
         sgnp.Button.setFont(new Font("Poppins", Font.PLAIN, 21));
-
+        sgnp.ImTeacher.setFont(new Font("Poppins", Font.PLAIN, 12));
+        sgnp.ImStudent.setFont(new Font("Poppins", Font.PLAIN, 12));
         sgnp.Button.setBackground(new Color(55, 54, 116));
+        sgnp.ImTeacher.setBackground(Color.WHITE);
+        sgnp.ImStudent.setBackground(Color.WHITE);
         sgnp.Button.setForeground(Color.WHITE);
 
         // adding signuppage components in mainFrame

@@ -225,7 +225,7 @@ public class HomePage implements ActionListener {
             String username = lgn.UsernameTF.getText();
             String password = new String(lgn.PasswordPF.getPassword());
             String rcvedPassword = accounts_tb.getPasswordFromDatabase("yokkayokka");
-            System.out.println(rcvedPassword);
+            
         }
     } // actionPerformed ends here
 } // homepage class ends here

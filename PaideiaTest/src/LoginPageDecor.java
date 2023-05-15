@@ -3,45 +3,48 @@ import java.awt.image.BufferedImage;
 //import java.io.File;
 import javax.imageio.ImageIO;
 
-import javax.swing.*; 
+import javax.swing.*;
 //import java.awt.event.*;
 
-public class LoginPageDecor{
-    public LoginPageDecor(JFrame mainFrame, JButton goBack, LoginFunctions lgn){
+public class LoginPageDecor {
+    public LoginPageDecor(JFrame mainFrame, JButton goBack, LoginFunctions lgn) {
 
-        //removing homepage components 
+        // removing homepage components
         mainFrame.getContentPane().removeAll();
-        
-        //adding background image on loginpage
-        try{
-            BufferedImage lgnImage = ImageIO.read(getClass().getResource("Images/Loginpage.PNG"));
+
+        // adding background image on loginpage
+        try {
+            BufferedImage lgnImage = ImageIO.read(getClass().getResource("Loginpage.PNG"));
             mainFrame.setContentPane(new ImagePanel(lgnImage));
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 
-        //arranging loginpage components
-        lgn.Username.setBounds       (350, 200, 100, 50);
-        lgn.Email.setBounds          (340, 200, 100, 50);
-        lgn.Password.setBounds       (340, 300, 100, 50);
-        lgn.UsernameTF.setBounds     (440, 200, 150, 50);
-        lgn.EmailTF.setBounds        (440, 200, 150, 50);
-        lgn.PasswordPF.setBounds     (440, 300, 150, 50);       
-        lgn.ForgotPasswordB.setBounds (370, 400, 200, 25);
-        lgn.WithEmailB.setBounds      (370, 450, 200, 25);
-        lgn.WithUsernameB.setBounds   (370, 450, 200, 25);
-        lgn.Button.setBounds         (370, 500, 200, 25);
-        lgn.sgnpButton.setBounds     (12, 100, 200, 25);
-        
+        // arranging loginpage components
+        // lgn.Username.setBounds(100, 100, 40, 50);
+        // lgn.Email.setBounds(140, 100, 100, 50);
+        // lgn.Password.setBounds(140, 10, 100, 50);
+        lgn.UsernameTF.setBounds(621, 290, 245, 30);
+        lgn.EmailTF.setBounds(621, 300, 245, 30);
+        lgn.PasswordPF.setBounds(621, 330, 245, 30);
+        lgn.ForgotPasswordB.setBounds(670, 430, 150, 16);
+        // lgn.WithEmailB.setBounds(370, 450, 200, 25);
+        // lgn.WithUsernameB.setBounds(370, 450, 200, 25);
+        lgn.Button.setBounds(670, 386, 150, 37);
+        lgn.sgnpButton.setBounds(670, 452, 150, 16);
+        goBack.setBounds(15, 24, 121, 33);
+
         lgn.Username.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lgn.Email.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lgn.Password.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lgn.UsernameTF.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lgn.PasswordPF.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lgn.ForgotPasswordB.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        lgn.ForgotPasswordB.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        lgn.Button.setFont(new Font("Times New Roman", Font.PLAIN, 21));
+        lgn.sgnpButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        goBack.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 
-        //adding loginpage components in mainFrame
+        // adding loginpage components in mainFrame
         mainFrame.add(lgn.Username);
         mainFrame.add(lgn.Password);
         mainFrame.add(lgn.UsernameTF);
@@ -50,10 +53,10 @@ public class LoginPageDecor{
         mainFrame.add(lgn.WithEmailB);
         mainFrame.add(lgn.Button);
         mainFrame.add(lgn.sgnpButton);
-        //adding go back button in both loginpage and signuppage
+        // adding go back button in both loginpage and signuppage
         mainFrame.add(goBack);
 
-        //refreshing and updating the mainFrame
+        // refreshing and updating the mainFrame
         SwingUtilities.updateComponentTreeUI(mainFrame);
 
     }

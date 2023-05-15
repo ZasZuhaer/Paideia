@@ -32,7 +32,7 @@ public class LoginPageDecor{
         lgn.WithEmailB.setBounds      (370, 450, 200, 25);
         lgn.WithUsernameB.setBounds   (370, 450, 200, 25);
         lgn.Button.setBounds         (370, 500, 200, 25);
-        lgn.sgnpButton.setBounds     (10, 100, 200, 25);
+        lgn.sgnpButton.setBounds     (12, 100, 200, 25);
         
         lgn.Username.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lgn.Email.setFont(new Font("Times New Roman", Font.PLAIN, 20));

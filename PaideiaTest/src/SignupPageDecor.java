@@ -31,8 +31,15 @@ public class SignupPageDecor {
         sgnp.UsernameTF.setBounds(618, 290, 245, 30);
         sgnp.PasswordPF.setBounds(618, 325, 245, 30);
         sgnp.RtpPasswordPF.setBounds(618, 360, 245, 30);
+<<<<<<< HEAD
         sgnp.DataVerificationMsg.setBounds(346, 390, 800, 25);
         sgnp.Button.setBounds(649, 413, 190, 38);
+=======
+        sgnp.DataVerificationMsg.setBounds(200, 400, 800, 25);
+        sgnp.Button.setBounds(649, 460, 190, 38);
+        sgnp.ImTeacher.setBounds(649, 400, 190, 20);
+        sgnp.ImStudent.setBounds(649, 430, 190, 20);
+>>>>>>> 22c0238e098d5f91e788cc247171dacb9c8a8feb
 
         // Font Change
         sgnp.Button.setFont(new Font("Poppins", Font.PLAIN, 21));
@@ -53,6 +60,8 @@ public class SignupPageDecor {
         mainFrame.add(sgnp.RtpPasswordPF);
         mainFrame.add(sgnp.DataVerificationMsg);
         mainFrame.add(sgnp.Button);
+        mainFrame.add(sgnp.ImStudent);
+        mainFrame.add(sgnp.ImTeacher);
         // adding go back button in both loginpage and signuppage
         mainFrame.add(goBack);
 

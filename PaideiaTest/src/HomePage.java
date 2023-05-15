@@ -26,7 +26,7 @@ public class HomePage implements ActionListener {
 
     // homepage components
     JFrame mainFrame; // mainFrame refers to homepage
-    JButton LearnerButton, TeacherButton; // already have an account? or create an account?
+    JButton getStartedBtn; // already have an account? or create an account?
     BufferedImage homeImage; // homepage background image
 
     // go back button
@@ -41,8 +41,7 @@ public class HomePage implements ActionListener {
     public HomePage() {
         // creating homepage components objects
         mainFrame = new JFrame("Paideia | Login or Signup");
-        LearnerButton = new JButton("I'm a Learner");
-        TeacherButton = new JButton("I'm a Teacher");
+        getStartedBtn = new JButton("Get Started!");
         goBack = new JButton("Go Back"); // preconfiguring go back
 
         // creating objects for loginpage and signuppage
@@ -50,13 +49,11 @@ public class HomePage implements ActionListener {
         sgnp = new SignupFunctions();
 
         // designing homepage components
-        LearnerButton.setBounds(575, 315, 290, 50);
-        TeacherButton.setBounds(575, 370, 290, 50);
+        getStartedBtn.setBounds(575, 315, 290, 50);
         goBack.setBounds(10, 10, 100, 25); // preconfiguring go back
 
         // adding actions to homepage components
-        LearnerButton.addActionListener(this);
-        TeacherButton.addActionListener(this);
+        getStartedBtn.addActionListener(this);
         goBack.addActionListener(this); // preconfiguring go back
 
         // adding background image on mainframe
@@ -68,8 +65,7 @@ public class HomePage implements ActionListener {
         }
 
         // adding homepage components in mainFrame
-        mainFrame.add(LearnerButton);
-        mainFrame.add(TeacherButton);
+        mainFrame.add(getStartedBtn);
 
         // homepage default configurations
         mainFrame.setSize(1000, 600);
@@ -91,7 +87,7 @@ public class HomePage implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         // IF LOGIN BUTTON IS PRESSED...
-        if ((e.getSource() == LearnerButton) || (e.getSource() == TeacherButton)) {
+        if ((e.getSource() == getStartedBtn)) {
 
             // designing loginpage components
             new LoginPageDecor(mainFrame, goBack, lgn);
@@ -138,8 +134,7 @@ public class HomePage implements ActionListener {
             } catch (Exception excp) {
                 System.out.println(excp);
             }
-            mainFrame.add(LearnerButton); // adding homepage component, login
-            mainFrame.add(TeacherButton); // adding homepage component, signup
+            mainFrame.add(getStartedBtn); // adding homepage component, login
             SwingUtilities.updateComponentTreeUI(mainFrame); // refreshing mainframe
         }
 

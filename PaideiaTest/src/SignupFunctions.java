@@ -10,6 +10,9 @@ public class SignupFunctions implements ISignupFunctions{
     JTextField NameTF, EmailTF, UsernameTF;
     JPasswordField PasswordPF, RtpPasswordPF;
     JButton Button;
+    JRadioButton ImTeacher;
+    JRadioButton ImStudent;
+    
 
     public SignupFunctions(){
         //creating objects for signuppage components
@@ -28,6 +31,8 @@ public class SignupFunctions implements ISignupFunctions{
         RtpPasswordPF = new JPasswordField();
             //buttons
         Button = new JButton("Sign Up");
+        ImTeacher = new JRadioButton("I'm a Teacher!");
+        ImStudent = new JRadioButton("I'm a Student!");
     }
 
     //checking if user entered password in password field

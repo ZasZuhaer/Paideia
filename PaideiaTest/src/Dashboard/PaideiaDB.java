@@ -13,7 +13,7 @@ public class PaideiaDB implements IPaideiaDB{
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver"); //connecting to DriverManager for managing the establishment of connections
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/paideiadb","root","python98423727"); //connecting to the database from local server
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/paideiadb","root","javaproject2023"); //connecting to the database from local server
             stmt=con.createStatement(); //creating object for executing commands
         }
         catch(Exception e){

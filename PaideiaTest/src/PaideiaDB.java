@@ -17,6 +17,9 @@ public class PaideiaDB implements IPaideiaDB{
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/paideiadb","root","javaproject2023"); //connecting to the database from local server
             stmt=con.createStatement(); //creating object for executing commands
         }
+        catch(Exception e){
+            System.out.println(e);
+        }
     }
 
     // connection closing method for outside termination

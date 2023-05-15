@@ -82,7 +82,7 @@ public class TeacherDashboard implements ActionListener{
 		// performing manual close operation on dashFrame
         dashFrame.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent e) {
-                //accounts_tb.close(); // closing database connection
+                teacher_courses.close(); // closing database connection
                 System.exit(0); // closing dashFrame
             }
         });

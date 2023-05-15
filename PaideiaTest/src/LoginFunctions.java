@@ -65,4 +65,5 @@ public class LoginFunctions implements ILoginFunctions {
         // refreshing mainframe
         SwingUtilities.updateComponentTreeUI(mainFrame);
     }
+
 }

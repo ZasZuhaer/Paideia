@@ -32,8 +32,8 @@ public class PaideiaDB implements IPaideiaDB{
     }
     
     //user adding method using sql command
-    public int adduser(String name, String email, String username, String password){ //requires user's name, email, username and password
-        String command = String.format("INSERT INTO %s(name, email, username, password) VALUES('%s', '%s', '%s', '%s')", tableName, name, email, username, password);
+    public int adduser(String name, String email, String username, String password, String usertype){ //requires user's name, email, username and password
+        String command = String.format("INSERT INTO %s(name, email, username, password, usertype) VALUES('%s', '%s', '%s', '%s', '%s')", tableName, name, email, username, password, usertype);
         try{
             stmt.executeUpdate(command); //executing commmand
             return 0;
@@ -104,6 +104,21 @@ public class PaideiaDB implements IPaideiaDB{
         catch(Exception e){
             System.out.println(e); //reporting if any exception is thrown
         }
+    }
+
+    public String getPasswordFromDatabase(String username){
+        String command = String.format("SELECT password FROM accounts WHERE username='%s'", username);
+        String password = "";
+        try{
+            rs=stmt.executeQuery(command); //executing commmand 
+            while(rs.next()){
+                password = rs.getString(1);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e); //reporting if any exception is thrown
+        }
+        return password;
     }
 
     public void addCourse(String title, String category, String description, int price, String instructor){

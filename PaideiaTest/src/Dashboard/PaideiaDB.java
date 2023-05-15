@@ -115,5 +115,20 @@ public class PaideiaDB implements IPaideiaDB{
             System.out.println(e); //reporting if any exception is thrown
         }
     }
+    public String getPasswordFromDatabase(String username){
+        String command = String.format("SELECT password FROM accounts WHERE username='%s'", username);
+        String password = "";
+        try{
+            rs=stmt.executeQuery(command); //executing commmand 
+            while(rs.next()){
+                password = rs.getString(1);
+                System.out.println(password);
+            }
+        }
+        catch(Exception e){
+            System.out.println(e); //reporting if any exception is thrown
+        }
+        return password;
+    }
 
 }  

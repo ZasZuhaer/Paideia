@@ -220,5 +220,15 @@ public class HomePage implements ActionListener {
                 }
             }
         } // signup data verification ends here
+        // IF LOGIN BUTTON IS PRESSED...
+        if (e.getSource() == lgn.Button) {
+            String username = lgn.UsernameTF.getText();
+            String password = new String(lgn.PasswordPF.getPassword());
+            String rcvedPassword = accounts_tb.getPasswordFromDatabase(username);
+            if(password.equals(rcvedPassword)){
+                mainFrame.setVisible(false);
+                new TeacherDashboard();
+            }
+        }
     } // actionPerformed ends here
 } // homepage class ends here

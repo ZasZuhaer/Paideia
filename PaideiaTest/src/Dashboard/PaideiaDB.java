@@ -129,7 +129,6 @@ public class PaideiaDB implements IPaideiaDB{
             rs = stmt.executeQuery(command); // executing commmand
             while (rs.next()) {
                 password = rs.getString(1);
-                System.out.println(password);
             }
         } catch (Exception e) {
             System.out.println(e); // reporting if any exception is thrown

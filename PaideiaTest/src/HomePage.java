@@ -1,6 +1,9 @@
 
 //import java.awt.*;
 import javax.swing.*;
+
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 //import java.io.File;
@@ -40,8 +43,8 @@ public class HomePage implements ActionListener {
 
     public HomePage() {
         // creating homepage components objects
-        mainFrame = new JFrame("Paideia | Login or Signup");
-        getStartedBtn = new JButton("Get Started!");
+        mainFrame = new JFrame("Paideia | Build Your Career");
+        getStartedBtn = new JButton("Get Started >");
         goBack = new JButton("Go Back"); // preconfiguring go back
 
         // creating objects for loginpage and signuppage
@@ -51,6 +54,8 @@ public class HomePage implements ActionListener {
         // designing homepage components
         getStartedBtn.setBounds(575, 315, 290, 50);
         goBack.setBounds(10, 10, 100, 25); // preconfiguring go back
+        getStartedBtn.setFont(new Font("Poppins", Font.PLAIN, 21));
+        getStartedBtn.setBackground(Color.WHITE);
 
         // adding actions to homepage components
         getStartedBtn.addActionListener(this);

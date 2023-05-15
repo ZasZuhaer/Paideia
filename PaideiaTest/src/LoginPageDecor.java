@@ -44,6 +44,16 @@ public class LoginPageDecor {
         lgn.sgnpButton.setFont(new Font("Poppins", Font.PLAIN, 12));
         goBack.setFont(new Font("Poppins", Font.PLAIN, 16));
 
+        // Setting Color
+        lgn.Button.setBackground(new Color(55, 54, 116));
+        lgn.Button.setForeground(Color.WHITE);
+        lgn.Button.setBackground(new Color(55, 54, 116));
+        lgn.Button.setForeground(Color.WHITE);
+        goBack.setBackground(Color.WHITE);
+        lgn.PasswordPF.setBackground(Color.WHITE);
+        lgn.ForgotPasswordB.setBackground(Color.WHITE);
+        lgn.sgnpButton.setBackground(Color.WHITE);
+
         // adding loginpage components in mainFrame
         mainFrame.add(lgn.Username);
         mainFrame.add(lgn.Password);

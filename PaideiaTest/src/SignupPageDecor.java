@@ -1,4 +1,7 @@
 import javax.swing.*;
+
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.image.BufferedImage;
 //import java.io.File;
 import javax.imageio.ImageIO;
@@ -28,8 +31,14 @@ public class SignupPageDecor {
         sgnp.UsernameTF.setBounds(618, 290, 245, 30);
         sgnp.PasswordPF.setBounds(618, 325, 245, 30);
         sgnp.RtpPasswordPF.setBounds(618, 360, 245, 30);
-        sgnp.DataVerificationMsg.setBounds(200, 400, 800, 25);
+        sgnp.DataVerificationMsg.setBounds(346, 390, 800, 25);
         sgnp.Button.setBounds(649, 413, 190, 38);
+
+        // Font Change
+        sgnp.Button.setFont(new Font("Poppins", Font.PLAIN, 21));
+
+        sgnp.Button.setBackground(new Color(55, 54, 116));
+        sgnp.Button.setForeground(Color.WHITE);
 
         // adding signuppage components in mainFrame
         mainFrame.add(sgnp.Name);

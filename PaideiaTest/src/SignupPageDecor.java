@@ -29,7 +29,9 @@ public class SignupPageDecor {
         sgnp.PasswordPF.setBounds(618, 325, 245, 30);
         sgnp.RtpPasswordPF.setBounds(618, 360, 245, 30);
         sgnp.DataVerificationMsg.setBounds(200, 400, 800, 25);
-        sgnp.Button.setBounds(649, 413, 190, 38);
+        sgnp.Button.setBounds(649, 460, 190, 38);
+        sgnp.ImTeacher.setBounds(649, 400, 190, 20);
+        sgnp.ImStudent.setBounds(649, 430, 190, 20);
 
         // adding signuppage components in mainFrame
         mainFrame.add(sgnp.Name);
@@ -44,6 +46,8 @@ public class SignupPageDecor {
         mainFrame.add(sgnp.RtpPasswordPF);
         mainFrame.add(sgnp.DataVerificationMsg);
         mainFrame.add(sgnp.Button);
+        mainFrame.add(sgnp.ImStudent);
+        mainFrame.add(sgnp.ImTeacher);
         // adding go back button in both loginpage and signuppage
         mainFrame.add(goBack);
 

@@ -82,6 +82,7 @@ public class TeacherDashboard implements ActionListener {
 		dashFrame.addWindowListener(new java.awt.event.WindowAdapter() {
 			public void windowClosing(java.awt.event.WindowEvent e) {
 				teacher_courses.close(); // closing database connection
+				System.out.println("Database closed from dashboardt");
 				System.exit(0); // closing dashFrame
 			}
 		});

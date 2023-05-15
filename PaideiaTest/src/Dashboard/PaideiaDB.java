@@ -32,8 +32,8 @@ public class PaideiaDB implements IPaideiaDB{
     }
     
     //user adding method using sql command
-    public int adduser(String name, String email, String username, String password){ //requires user's name, email, username and password
-        String command = String.format("INSERT INTO %s(name, email, username, password) VALUES('%s', '%s', '%s', '%s')", tableName, name, email, username, password);
+    public int adduser(String name, String email, String username, String password, String usertype){ //requires user's name, email, username and password
+        String command = String.format("INSERT INTO %s(name, email, username, password, usertype) VALUES('%s', '%s', '%s', '%s', '%s')", tableName, name, email, username, password, usertype);
         try{
             stmt.executeUpdate(command); //executing commmand
             return 0;

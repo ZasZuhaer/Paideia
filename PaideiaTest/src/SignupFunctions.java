@@ -188,5 +188,15 @@ public class SignupFunctions implements ISignupFunctions{
             return true;
         }
     }
+    public boolean checkingRadioSelection(JFrame mainFrame, SignupFunctions sgnp){
+        if(sgnp.ImStudent.isSelected() || sgnp.ImTeacher.isSelected()){
+            return true;
+        }
+        else{
+            sgnp.DataVerificationMsg.setText("Select a user type");
+            SwingUtilities.updateComponentTreeUI(mainFrame); // refreshing mainframe
+            return false;
+        }
+    }
 
 }

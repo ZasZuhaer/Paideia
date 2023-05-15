@@ -224,12 +224,10 @@ public class HomePage implements ActionListener {
         if (e.getSource() == lgn.Button) {
             String username = lgn.UsernameTF.getText();
             String password = new String(lgn.PasswordPF.getPassword());
-            if (!(username.isEmpty() || password.isEmpty())) {
-                String rcvedPassword = accounts_tb.getPasswordFromDatabase(username);
-                if (password.equals(rcvedPassword)) {
-                    mainFrame.setVisible(false);
-                    new TeacherDashboard();
-                }
+            String rcvedPassword = accounts_tb.getPasswordFromDatabase(username);
+            if (password.equals(rcvedPassword)) {
+                mainFrame.setVisible(false);
+                new TeacherDashboard();
             }
         }
     } // actionPerformed ends here

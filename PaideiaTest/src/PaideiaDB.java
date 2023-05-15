@@ -1,30 +1,21 @@
 
 //importing sql package for java
-import java.sql.*;
+import java.sql.*;  
 
-public class PaideiaDB implements IPaideiaDB {
-    // creating object reference...
-    Connection con; // for connecting to database
-    Statement stmt; // for executing commands(all commands will be executed using stmt object)
-    ResultSet rs; // for storing selected data from database to local memory
-    String tableName; // for making the class usable for all tables inside database(dynamic use)
-
-    public PaideiaDB(String tableName) { // parameter added for dynamic use
-        this.tableName = tableName; // for dynamic use
-
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // connecting to DriverManager for managing the establishment of
-                                                       // connections
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/paideiadb", "root", "javaproject2023"); // connecting
-                                                                                                                   // to
-                                                                                                                   // the
-                                                                                                                   // database
-                                                                                                                   // from
-                                                                                                                   // local
-                                                                                                                   // server
-            stmt = con.createStatement(); // creating object for executing commands
-        } catch (Exception e) {
-            System.out.println(e); // reporting if any exception is thrown
+public class PaideiaDB implements IPaideiaDB{  
+    //creating object reference...
+    Connection con; //for connecting to database
+    Statement stmt; //for executing commands(all commands will be executed using stmt object)
+    ResultSet rs; //for storing selected data from database to local memory
+    String tableName; //for making the class usable for all tables inside database(dynamic use)
+    
+    public PaideiaDB(String tableName){ //parameter added for dynamic use
+        this.tableName = tableName; //for dynamic use
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver"); //connecting to DriverManager for managing the establishment of connections
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/paideiadb","root","javaproject2023"); //connecting to the database from local server
+            stmt=con.createStatement(); //creating object for executing commands
         }
     }
 

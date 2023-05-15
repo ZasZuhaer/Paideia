@@ -1,8 +1,5 @@
-import java.awt.event.*;
 import javax.swing.*;
-import java.awt.image.BufferedImage;
 //import java.io.File;
-import javax.imageio.ImageIO;
 
 public class AddCourseDecor{
 	public AddCourseDecor(JFrame dashFrame, AddCourseFuncs addcrs){

@@ -172,7 +172,7 @@ public class HomePage implements ActionListener {
                                     // then check if they match...
                                     if (sgnp.checkingPasswordMatch(mainFrame, sgnp)) {
 
-                                        // then check if radiobutton is selected...
+                                        //then check if radiobutton is selected...
                                         if (sgnp.checkingRadioSelection(mainFrame, sgnp)) {
 
                                             System.out.println("good password"); // for debugging
@@ -182,12 +182,13 @@ public class HomePage implements ActionListener {
                                             String username = new String(sgnp.UsernameTF.getText());
                                             String password = new String(sgnp.PasswordPF.getPassword());
                                             String usertype = "";
-                                            if (sgnp.ImStudent.isSelected()) {
+                                            if(sgnp.ImStudent.isSelected()){
                                                 usertype = "Student";
-                                            } else if (sgnp.ImTeacher.isSelected()) {
+                                            }
+                                            else if(sgnp.ImTeacher.isSelected()){
                                                 usertype = "Teacher";
                                             }
-
+                                            
                                             int errors = accounts_tb.adduser(name, email, username, password, usertype);
 
                                             // Reporting signup results
@@ -207,8 +208,7 @@ public class HomePage implements ActionListener {
                                             } else {
                                                 // unknown error during adding user in database
                                                 sgnp.DataVerificationMsg
-                                                        .setText(
-                                                                "Unknown error occured during adding user in database");
+                                                        .setText("Unknown error occured during adding user in database");
                                                 SwingUtilities.updateComponentTreeUI(mainFrame); // refreshing mainframe
                                             }
                                         }
@@ -220,14 +220,16 @@ public class HomePage implements ActionListener {
                 }
             }
         } // signup data verification ends here
-          // IF LOGIN BUTTON IS PRESSED...
+        // IF LOGIN BUTTON IS PRESSED...
         if (e.getSource() == lgn.Button) {
             String username = lgn.UsernameTF.getText();
             String password = new String(lgn.PasswordPF.getPassword());
-            String rcvedPassword = accounts_tb.getPasswordFromDatabase(username);
-            if (password.equals(rcvedPassword)) {
-                mainFrame.setVisible(false);
-                new TeacherDashboard();
+            if(!(username.isEmpty() || password.isEmpty())){
+                String rcvedPassword = accounts_tb.getPasswordFromDatabase(username);
+                if(password.equals(rcvedPassword)){
+                    mainFrame.setVisible(false);
+                    new TeacherDashboard();
+                }
             }
         }
     } // actionPerformed ends here

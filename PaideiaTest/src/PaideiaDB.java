@@ -33,7 +33,7 @@ public class PaideiaDB implements IPaideiaDB{
     
     //user adding method using sql command
     public int adduser(String name, String email, String username, String password){ //requires user's name, email, username and password
-        String command = String.format("INSERT INTO accounts(name, email, username, password) VALUES('%s', '%s', '%s', '%s')", name, email, username, password);
+        String command = String.format("INSERT INTO %s(name, email, username, password) VALUES('%s', '%s', '%s', '%s')", tableName, name, email, username, password);
         try{
             stmt.executeUpdate(command); //executing commmand
             return 0;
@@ -69,7 +69,7 @@ public class PaideiaDB implements IPaideiaDB{
 
     //user removing method using sql command
     public void removeuser(String username){
-        String command = String.format("DELETE FROM accounts WHERE username='%s'", username);
+        String command = String.format("DELETE FROM %s WHERE username='%s'", tableName, username);
         try{
             stmt.executeUpdate(command); //executing commmand
         }
@@ -80,7 +80,7 @@ public class PaideiaDB implements IPaideiaDB{
 
     //password updating method using sql command
     public void udpatepassword(String username, String newPassword){
-        String command = String.format("UPDATE accounts SET password='%s' WHERE username='%s'", newPassword, username);
+        String command = String.format("UPDATE %s SET password='%s' WHERE username='%s'", tableName, newPassword, username);
         try{
             stmt.executeUpdate(command); //executing commmand
         }
@@ -90,7 +90,7 @@ public class PaideiaDB implements IPaideiaDB{
     }
 
     //method for showing all data in accounts table
-    public void showtable(){
+    public void showAccountsTable(){
         String command = "SELECT * FROM accounts";
         try{
             rs=stmt.executeQuery(command); //executing commmand 

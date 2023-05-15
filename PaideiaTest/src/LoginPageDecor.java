@@ -30,19 +30,19 @@ public class LoginPageDecor {
         lgn.ForgotPasswordB.setBounds(670, 430, 150, 16);
         // lgn.WithEmailB.setBounds(370, 450, 200, 25);
         // lgn.WithUsernameB.setBounds(370, 450, 200, 25);
-        lgn.Button.setBounds(670, 386, 150, 37);
+        lgn.Button.setBounds(670, 386, 150, 38);
         lgn.sgnpButton.setBounds(670, 452, 150, 16);
         goBack.setBounds(15, 24, 121, 33);
 
-        lgn.Username.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lgn.Email.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lgn.Password.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lgn.UsernameTF.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lgn.PasswordPF.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lgn.ForgotPasswordB.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-        lgn.Button.setFont(new Font("Times New Roman", Font.PLAIN, 21));
-        lgn.sgnpButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-        goBack.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        lgn.Username.setFont(new Font("Poppins", Font.PLAIN, 20));
+        lgn.Email.setFont(new Font("Poppins", Font.PLAIN, 20));
+        lgn.Password.setFont(new Font("Poppins", Font.PLAIN, 20));
+        lgn.UsernameTF.setFont(new Font("Poppins", Font.PLAIN, 20));
+        lgn.PasswordPF.setFont(new Font("Poppins", Font.PLAIN, 20));
+        lgn.ForgotPasswordB.setFont(new Font("Poppins", Font.PLAIN, 12));
+        lgn.Button.setFont(new Font("Poppins", Font.PLAIN, 21));
+        lgn.sgnpButton.setFont(new Font("Poppins", Font.PLAIN, 12));
+        goBack.setFont(new Font("Poppins", Font.PLAIN, 16));
 
         // adding loginpage components in mainFrame
         mainFrame.add(lgn.Username);

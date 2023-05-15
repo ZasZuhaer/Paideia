@@ -18,18 +18,18 @@ public class SignupPageDecor {
         }
 
         // arranging signuppage components
-        sgnp.Name.setBounds(340, 150, 100, 50);
-        sgnp.Email.setBounds(340, 200, 100, 50);
-        sgnp.Username.setBounds(340, 250, 150, 50);
-        sgnp.Password.setBounds(340, 300, 150, 50);
-        sgnp.RtpPassword.setBounds(340, 350, 150, 50);
-        sgnp.NameTF.setBounds(500, 160, 150, 25);
-        sgnp.EmailTF.setBounds(500, 210, 150, 25);
-        sgnp.UsernameTF.setBounds(500, 260, 150, 25);
-        sgnp.PasswordPF.setBounds(500, 310, 150, 25);
-        sgnp.RtpPasswordPF.setBounds(500, 360, 150, 25);
+        // sgnp.Name.setBounds(340, 150, 100, 50);
+        // sgnp.Email.setBounds(340, 200, 100, 50);
+        // sgnp.Username.setBounds(340, 250, 150, 50);
+        // sgnp.Password.setBounds(340, 300, 150, 50);
+        // sgnp.RtpPassword.setBounds(340, 350, 150, 50);
+        sgnp.NameTF.setBounds(618, 220, 245, 30);
+        sgnp.EmailTF.setBounds(618, 255, 245, 30);
+        sgnp.UsernameTF.setBounds(618, 290, 245, 30);
+        sgnp.PasswordPF.setBounds(618, 325, 245, 30);
+        sgnp.RtpPasswordPF.setBounds(618, 360, 245, 30);
         sgnp.DataVerificationMsg.setBounds(200, 400, 800, 25);
-        sgnp.Button.setBounds(420, 500, 150, 25);
+        sgnp.Button.setBounds(649, 413, 190, 38);
 
         // adding signuppage components in mainFrame
         mainFrame.add(sgnp.Name);

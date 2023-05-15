@@ -107,6 +107,10 @@ public class TeacherDashboard implements ActionListener{
 						String instructor = teacherName;
 						
 						teacher_courses.addCourse(title, category,description, price,instructor);
+						addcrs.DataVerificationMsg.setText("Course Added!");
+						addcrs.titleTF.setText("");
+						addcrs.descriptionTF.setText("");
+						addcrs.priceTF.setText("");
 					}
 				}
 			}	

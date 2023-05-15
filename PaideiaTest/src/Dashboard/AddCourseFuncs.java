@@ -1,8 +1,8 @@
-import java.awt.event.*;
+//import java.awt.event.*;
 import javax.swing.*;
-import java.awt.image.BufferedImage;
+//import java.awt.image.BufferedImage;
 //import java.io.File;
-import javax.imageio.ImageIO;
+//import javax.imageio.ImageIO;
 
 public class AddCourseFuncs{
 	
@@ -11,7 +11,7 @@ public class AddCourseFuncs{
 	JButton addCourseBtn;
 	
 	String categories[] = {"Language", "Design", "Professional", "Freelancing"};
-	JComboBox categoryCB;
+	JComboBox<String> categoryCB;
 
 	public AddCourseFuncs(){
 		
@@ -22,7 +22,7 @@ public class AddCourseFuncs{
 		DataVerificationMsg = new JLabel();
 		
 		titleTF = new JTextField();
-		categoryCB = new JComboBox(categories);
+		categoryCB = new JComboBox<>(categories);
 		descriptionTF = new JTextField();
 		priceTF = new JTextField();
 		

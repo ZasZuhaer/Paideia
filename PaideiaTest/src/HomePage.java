@@ -38,9 +38,6 @@ public class HomePage implements ActionListener {
     // connecting database
     PaideiaDB accounts_tb = new PaideiaDB("accounts");
 
-    // functional objects
-    String userType;
-
     public HomePage() {
         // creating homepage components objects
         mainFrame = new JFrame("Paideia | Build Your Career");

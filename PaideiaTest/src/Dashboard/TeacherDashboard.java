@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -33,15 +35,48 @@ public class TeacherDashboard implements ActionListener {
 		userMenuBtn = new JButton("UserMenuImage");
 
 		// setting positions for buttons
-		allCoursesBtn.setBounds(100, 100, 100, 50);
-		designBtn.setBounds(200, 100, 100, 50);
-		languageBtn.setBounds(300, 100, 100, 50);
-		professionalBtn.setBounds(400, 100, 100, 50);
-		myCoursesBtn.setBounds(100, 200, 100, 50);
-		freelancingBtn.setBounds(300, 100, 100, 50);
-		supportBtn.setBounds(100, 400, 100, 50);
-		addCourseBtn.setBounds(100, 600, 100, 50);
-		userMenuBtn.setBounds(100, 500, 100, 50);
+		allCoursesBtn.setBounds(40, 210, 180, 40);
+		designBtn.setBounds(40, 330, 180, 40);
+		languageBtn.setBounds(40, 270, 180, 40);
+		professionalBtn.setBounds(40, 390, 180, 40);
+		myCoursesBtn.setBounds(850, 28, 100, 40);
+		freelancingBtn.setBounds(40, 460, 180, 40);
+		supportBtn.setBounds(1153, 28, 100, 40);
+		addCourseBtn.setBounds(1000, 28, 110, 40);
+		// userMenuBtn.setBounds(100, 100, 100, 50);
+
+		// Setting Font and Color
+		allCoursesBtn.setFont(new Font("Poppins", Font.PLAIN, 20));
+		allCoursesBtn.setBackground(new Color(55, 54, 116));
+		allCoursesBtn.setForeground(Color.WHITE);
+
+		designBtn.setFont(new Font("Poppins", Font.PLAIN, 20));
+		designBtn.setBackground(new Color(55, 54, 116));
+		designBtn.setForeground(Color.WHITE);
+
+		freelancingBtn.setFont(new Font("Poppins", Font.PLAIN, 20));
+		freelancingBtn.setBackground(new Color(55, 54, 116));
+		freelancingBtn.setForeground(Color.WHITE);
+
+		professionalBtn.setFont(new Font("Poppins", Font.PLAIN, 20));
+		professionalBtn.setBackground(new Color(55, 54, 116));
+		professionalBtn.setForeground(Color.WHITE);
+
+		languageBtn.setFont(new Font("Poppins", Font.PLAIN, 20));
+		languageBtn.setBackground(new Color(55, 54, 116));
+		languageBtn.setForeground(Color.WHITE);
+
+		addCourseBtn.setFont(new Font("Poppins", Font.PLAIN, 10));
+		addCourseBtn.setBackground(Color.WHITE);
+		addCourseBtn.setForeground(new Color(55, 54, 116));
+
+		supportBtn.setFont(new Font("Poppins", Font.PLAIN, 10));
+		supportBtn.setBackground(Color.WHITE);
+		supportBtn.setForeground(new Color(55, 54, 116));
+
+		myCoursesBtn.setFont(new Font("Poppins", Font.PLAIN, 10));
+		myCoursesBtn.setBackground(Color.WHITE);
+		myCoursesBtn.setForeground(new Color(55, 54, 116));
 
 		// adding action listener to buttons
 		allCoursesBtn.addActionListener(this);
